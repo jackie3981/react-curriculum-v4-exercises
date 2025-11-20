@@ -1,0 +1,37 @@
+/* SnackList.css */
+
+.snack-list-container {
+  margin: 20px 0;
+}
+
+.snack-list-buttons {
+  margin-bottom: 15px;
+}
+
+.snack-list-buttons button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  color: black;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.snack-list-buttons button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.snack-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.snack-list li {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
