@@ -12,12 +12,13 @@
   Use the commented "Explanation" section at the bottom of this week's components.
 */
 
+import { useState } from "react";
 
 export default function BugProps({ name = "friend" }) {
-  let message = "Hello, " + name;
+  const [message, setMessage] = useState("Hello, " + name);
 
   function handleChange() {
-    message = "Hi, " + name + "!";
+    setMessage("Hi, " + name + "!");
   }
 
   return (
@@ -28,6 +29,8 @@ export default function BugProps({ name = "friend" }) {
   );
 }
 
-
 // Explanation:
-// (Write your explanation here)
+// The issue was that the message was being created and stored in a manner that React couldn't detect changes. 
+// By utilizing the `useState` hook to manage the message state, we ensure that when `setMessage` is called, 
+// React is aware it needs to re-render the component with the updated message. 
+// This enables the user interface to reflect the changes when the button is clicked.

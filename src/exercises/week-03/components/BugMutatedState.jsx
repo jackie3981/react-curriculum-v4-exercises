@@ -13,8 +13,7 @@ export default function BugMutatedState() {
   const [count, setCount] = useState(0);
 
    function handleAdd() {
-    count++;
-    setCount(count);
+    setCount(prevCount => prevCount + 1); // Use the previous state to ensure correct updates
   }
 
   return (
@@ -26,4 +25,6 @@ export default function BugMutatedState() {
 }
 
 // Explanation:
-// (Write your explanation here)
+// The issue was that the state was being mutated directly using `count += 1`, which does not trigger a re-render in React. 
+// By using `setCount(prevCount => prevCount + 1)`, we ensure that we are creating a new state value based on the previous state, 
+// which allows React to properly track and update the component when the state changes.
