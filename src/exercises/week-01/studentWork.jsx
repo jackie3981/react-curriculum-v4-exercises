@@ -1,10 +1,11 @@
 //Week-01 Introduction to React
-//Exercise: Build an "About Me" Component in this file 
+//Exercise: Build an "About Me" Component in this file
 
 import AboutMe from "./components/AboutMe";
 import { age, lastName, hobbies, name } from "./data/studentInfo";
 
 export default function StudentWork() {
+  //add variables here
   return (
     <div>
       <AboutMe

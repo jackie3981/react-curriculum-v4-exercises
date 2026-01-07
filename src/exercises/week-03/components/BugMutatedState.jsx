@@ -8,9 +8,9 @@
   incorrectly.
 */
 
-import { useState } from "react";
+import { useState } from 'react';
 export default function BugMutatedState() {
-  const [count, setCount] = useState(0);
+  let [count, setCount] = useState(0);
 
    function handleAdd() {
     setCount(prevCount => prevCount + 1); // Use the previous state to ensure correct updates

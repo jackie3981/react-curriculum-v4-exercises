@@ -15,4 +15,4 @@ export default function StudentWork() {
       <BugProps />
     </div>
   );
-} 
+}

@@ -4,7 +4,7 @@
 import SnackRanking from "./components/SnackApp";
 
 export default function StudentWork() {
-  return(
+  return (
     <div>
       {/* add JSX here */}
       <SnackRanking/>
