@@ -1,6 +1,6 @@
 // Helper function to generate unique IDs
 export const generateId = () =>
-  `q${Date.now()}${Math.random().toString(36).substr(2, 9)}`;
+  `q${Date.now()}${Math.random().toString(36).substring(2, 11)}`;
 
 // Question type constants
 export const QUESTION_TYPES = {
