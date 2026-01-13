@@ -14,7 +14,7 @@ By completing this exercise, you will:
 
 ### The Setup
 
-Your team successfully delivered an Survey Builder MVP to a client who loved the demo! The MVP allows users to:
+Your team successfully delivered a Survey Builder MVP to a client who loved the demo! The MVP allows users to:
 
 - ✅ Create new survey questions (text, multiple-choice, yes/no, rating)
 - ✅ Add answer options to multiple-choice questions
