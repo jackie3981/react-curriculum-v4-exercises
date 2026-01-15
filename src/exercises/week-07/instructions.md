@@ -2,7 +2,7 @@
 
 ## Exercise objectives
 
-Welcome to Week 06 of the React curriculum! 🎉 This week builds on what you've learned about fetching data and updating your UI.
+Welcome to Week 07 of the React curriculum! 🎉 This week builds on what you've learned about fetching data and updating your UI.
 
 ## Scenario details
 
