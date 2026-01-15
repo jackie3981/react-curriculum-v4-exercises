@@ -4,8 +4,8 @@ import FetchOnRender from './FetchOnRender';
 export default function StudentWork() {
   return (
     <>
-      <FetchOnClick />
       <FetchOnRender />
+      <FetchOnClick />
     </>
   );
 }
