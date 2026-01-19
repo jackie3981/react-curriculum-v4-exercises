@@ -1,0 +1,118 @@
+/* Main container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Exercise area */
+.exerciseArea {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.exerciseTitle {
+  margin-top: 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Snacks list */
+.snacksSection {
+  margin-top: 20px;
+}
+
+.snacksTitle {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.emptyMessage {
+  font-style: italic;
+  color: #666;
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.snacksList {
+  display: grid;
+  gap: 10px;
+}
+
+.snackItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  transition: background-color 0.2s;
+}
+
+.snackItemEditing {
+  background-color: #e3f2fd;
+}
+
+.snackInfo {
+  flex: 1;
+}
+
+.snackName {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.snackRating {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.snackActions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Snack action buttons */
+.actionButton {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.editButton {
+  background-color: #2196f3;
+  color: white;
+}
+
+.editButton:hover:not(:disabled) {
+  background-color: #1976d2;
+}
+
+.editButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
