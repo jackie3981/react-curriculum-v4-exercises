@@ -11,7 +11,7 @@
 }
 
 /* Exercise area */
-.exerciseArea {
+.exercise-area {
   border: 2px dashed #ccc;
   padding: 20px;
   margin-bottom: 20px;
@@ -19,23 +19,23 @@
   border-radius: 8px;
 }
 
-.exerciseTitle {
+.exercise-title {
   margin-top: 0;
   color: #666;
   font-size: 1.1rem;
 }
 
 /* Snacks list */
-.snacksSection {
+.snacks-section {
   margin-top: 20px;
 }
 
-.snacksTitle {
+.snacks-title {
   color: #333;
   margin-bottom: 15px;
 }
 
-.emptyMessage {
+.empty-message {
   font-style: italic;
   color: #666;
   padding: 20px;
@@ -44,12 +44,12 @@
   border-radius: 4px;
 }
 
-.snacksList {
+.snacks-list {
   display: grid;
   gap: 10px;
 }
 
-.snackItem {
+.snack-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,32 +60,32 @@
   transition: background-color 0.2s;
 }
 
-.snackItemEditing {
+.snack-item-editing {
   background-color: #e3f2fd;
 }
 
-.snackInfo {
+.snack-info {
   flex: 1;
 }
 
-.snackName {
+.snack-name {
   font-weight: bold;
   margin-bottom: 4px;
   color: #333;
 }
 
-.snackRating {
+.snack-rating {
   font-size: 0.9em;
   color: #666;
 }
 
-.snackActions {
+.snack-actions {
   display: flex;
   gap: 10px;
 }
 
 /* Snack action buttons */
-.actionButton {
+.action-button {
   padding: 5px 10px;
   border: none;
   border-radius: 3px;
@@ -94,25 +94,25 @@
   transition: background-color 0.2s;
 }
 
-.editButton {
+.edit-button {
   background-color: #2196f3;
   color: white;
 }
 
-.editButton:hover:not(:disabled) {
+.edit-button:hover:not(:disabled) {
   background-color: #1976d2;
 }
 
-.editButton:disabled {
+.edit-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.deleteButton {
+.delete-button {
   background-color: #f44336;
   color: white;
 }
 
-.deleteButton:hover {
+.delete-button:hover {
   background-color: #d32f2f;
 }

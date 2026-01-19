@@ -3,24 +3,24 @@
   /* No specific styles for form container yet */
 }
 
-.formTitle {
+.form-title {
   margin-bottom: 20px;
   color: #333;
 }
 
 /* Field containers */
-.fieldContainer {
+.field-container {
   margin-bottom: 15px;
 }
 
-.fieldLabel {
+.field-label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #333;
 }
 
-.fieldInput {
+.field-input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
@@ -29,14 +29,14 @@
   box-sizing: border-box;
 }
 
-.fieldInput:focus {
+.field-input:focus {
   outline: none;
   border-color: #007acc;
   box-shadow: 0 0 0 1px #007acc;
 }
 
 /* Button container */
-.buttonContainer {
+.button-container {
   display: flex;
   gap: 10px;
 }
@@ -51,21 +51,21 @@
   transition: background-color 0.2s;
 }
 
-.submitButton {
+.submit-button {
   background-color: #4caf50;
   color: white;
 }
 
-.submitButton:hover {
+.submit-button:hover {
   background-color: #45a049;
 }
 
-.cancelButton {
+.cancel-button {
   background-color: #9e9e9e;
   color: white;
 }
 
-.cancelButton:hover {
+.cancel-button:hover {
   background-color: #757575;
 }
 
@@ -85,12 +85,12 @@
 }
 
 /* Input validation states */
-.inputError {
+.input-error {
   border-color: #d32f2f !important;
   box-shadow: 0 0 0 1px #d32f2f !important;
 }
 
-.inputValid {
+.input-valid {
   border-color: #4caf50 !important;
   box-shadow: 0 0 0 1px #4caf50 !important;
 }

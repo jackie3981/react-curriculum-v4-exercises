@@ -57,37 +57,41 @@ export default function SnackManager() {
         editingSnack={editingSnack}
         cancelEdit={cancelEdit}
         updateSnack={updateSnack}
-        className={styles.exerciseArea}
+        className={styles['exercise-area']}
       />
 
-      <div className={styles.snacksSection}>
-        <h3 className={styles.snacksTitle}>Current Snacks ({snacks.length})</h3>
+      <div className={styles['snacks-section']}>
+        <h3 className={styles['snacks-title']}>
+          Current Snacks ({snacks.length})
+        </h3>
         {snacks.length === 0 ? (
-          <p className={styles.emptyMessage}>No snacks yet. Add one above!</p>
+          <p className={styles['empty-message']}>
+            No snacks yet. Add one above!
+          </p>
         ) : (
-          <div className={styles.snacksList}>
+          <div className={styles['snacks-list']}>
             {snacks.map((snack) => (
               <div
                 key={snack.id}
-                className={`${styles.snackItem} ${editingSnack && editingSnack.id === snack.id ? styles.snackItemEditing : ''}`}
+                className={`${styles['snack-item']} ${editingSnack && editingSnack.id === snack.id ? styles['snack-item-editing'] : ''}`}
               >
-                <div className={styles.snackInfo}>
-                  <div className={styles.snackName}>{snack.name}</div>
-                  <div className={styles.snackRating}>
+                <div className={styles['snack-info']}>
+                  <div className={styles['snack-name']}>{snack.name}</div>
+                  <div className={styles['snack-rating']}>
                     Rating: {'⭐'.repeat(snack.rating)} ({snack.rating}/5)
                   </div>
                 </div>
-                <div className={styles.snackActions}>
+                <div className={styles['snack-actions']}>
                   <button
                     onClick={() => startEdit(snack)}
-                    className={`${styles.actionButton} ${styles.editButton}`}
+                    className={`${styles['action-button']} ${styles['edit-button']}`}
                     disabled={editingSnack !== null}
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => deleteSnack(snack.id)}
-                    className={`${styles.actionButton} ${styles.deleteButton}`}
+                    className={`${styles['action-button']} ${styles['delete-button']}`}
                   >
                     Delete
                   </button>

@@ -28,24 +28,24 @@ export default function SnackForm({
       onSubmit={handleSubmit}
       className={`${styles.form} ${className || ''}`}
     >
-      <h3 className={styles.formTitle}>
+      <h3 className={styles['form-title']}>
         {isEditing ? '✏️ Edit Snack' : '➕ Add Snack'}
       </h3>
 
-      <div className={styles.fieldContainer}>
-        <label className={styles.fieldLabel}>Name:</label>
+      <div className={styles['field-container']}>
+        <label className={styles['field-label']}>Name:</label>
         <input
           type="text"
           name="name"
           defaultValue={isEditing ? editingSnack.name : ''}
           required
-          className={styles.fieldInput}
+          className={styles['field-input']}
           placeholder="Enter snack name"
         />
       </div>
 
-      <div className={styles.fieldContainer}>
-        <label className={styles.fieldLabel}>Rating:</label>
+      <div className={styles['field-container']}>
+        <label className={styles['field-label']}>Rating:</label>
         <input
           type="number"
           name="rating"
@@ -53,15 +53,15 @@ export default function SnackForm({
           required
           min="1"
           max="5"
-          className={styles.fieldInput}
+          className={styles['field-input']}
           placeholder="Rate 1-5"
         />
       </div>
 
-      <div className={styles.buttonContainer}>
+      <div className={styles['button-container']}>
         <button
           type="submit"
-          className={`${styles.button} ${styles.submitButton}`}
+          className={`${styles.button} ${styles['submit-button']}`}
         >
           {isEditing ? 'Save' : 'Add'}
         </button>
@@ -70,7 +70,7 @@ export default function SnackForm({
           <button
             type="button"
             onClick={cancelEdit}
-            className={`${styles.button} ${styles.cancelButton}`}
+            className={`${styles.button} ${styles['cancel-button']}`}
           >
             Cancel
           </button>
