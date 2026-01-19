@@ -16,7 +16,7 @@ export default function SnackManager() {
     const newSnack = {
       id: nextId,
       name: name.trim(),
-      rating: parseInt(rating),
+      rating: parseInt(rating, 10),
     };
     setSnacks([...snacks, newSnack]);
     setNextId(nextId + 1);
@@ -26,7 +26,7 @@ export default function SnackManager() {
     setSnacks(
       snacks.map((snack) =>
         snack.id === id
-          ? { ...snack, name: name.trim(), rating: parseInt(rating) }
+          ? { ...snack, name: name.trim(), rating: parseInt(rating, 10) }
           : snack
       )
     );
