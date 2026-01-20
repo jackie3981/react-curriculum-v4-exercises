@@ -1,7 +1,7 @@
-import { Link, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default function ProductDetails() {
-  // TODO: Exercise 4 — get `id` from useParams()
+  // TODO: Exercise 4 — get `id` from URL params
   const id = null;
 
   return (

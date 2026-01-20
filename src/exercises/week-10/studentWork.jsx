@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-
-import Home from './pages/Home.jsx';
-import Checkout from './pages/Checkout.jsx';
-import Account from './pages/Account.jsx';
-import ProductDetails from './pages/ProductDetails.jsx';
-import NotFound from './pages/NotFound.jsx';
-
-import { productIds } from './data/productIds.js';
 
 /**
  * Exercise 1 (3–5 sentences):
@@ -42,6 +34,7 @@ export default function StudentWork() {
       <main style={{ padding: 12 }}>
         {/* TODO: Exercise 2 — Add <Routes> with all required routes.
             Remember: protect /account by only defining that route when logged in.
+            Also, when you render <Account>, be sure to pass the user prop (e.g. <Account user={user} />).
         */}
       </main>
 

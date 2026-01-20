@@ -1,5 +1,3 @@
-import { Link } from 'react-router';
-
 export default function Home({ productIds }) {
   return (
     <section>
@@ -11,7 +9,7 @@ export default function Home({ productIds }) {
       <p>Click a product id to visit a dynamic route:</p>
 
       <ul>
-        {/* TODO: map over productIds and render a Link to `/products/${id}` */}
+        {/* TODO: map over the productIds prop (destructured in the Home component's parameters) and render a Link to `/products/${id}` */}
       </ul>
     </section>
   );

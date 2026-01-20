@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default function NotFound() {
-  // TODO: Exercise 5 — useLocation() and get pathname
+  // TODO: Exercise 5 Part B —  get location and pathname
   const pathname = '';
 
   return (

@@ -1,15 +1,15 @@
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 export default function Checkout() {
-  // TODO: Exercise 5 — create navigate using useNavigate()
+  // TODO: Exercise 5 Part A — create navigate using useNavigate()
   const navigate = null;
 
   function handleGoHome() {
-    // TODO: navigate('/')
+    // TODO: navigate back to home page
   }
 
   function handleBack() {
-    // TODO: navigate(-1)
+    // TODO: navigate back one page
   }
 
   return (
