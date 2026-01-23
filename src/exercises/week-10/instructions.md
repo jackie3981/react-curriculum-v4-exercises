@@ -30,7 +30,7 @@ You are building a small "Routing Demo" app:
 
 ## Exercise 1: Implement Routes + Shared Layout + Protected Route
 
-In `studentWork.jsx`, implement these routes inside `<main>`:
+- In `studentWork.jsx`, implement these routes inside `<main>`:
 
 | Path            | Component                |
 | --------------- | ------------------------ |
@@ -39,6 +39,10 @@ In `studentWork.jsx`, implement these routes inside `<main>`:
 | `/products/:id` | ProductDetails           |
 | `/account`      | Account (**protected**)  |
 | `*`             | NotFound (**catch-all**) |
+
+- Import the products from the data directory
+  - Create a products state variable and assign it the imported value.
+  - Pass `products` as a prop to the Home component instance
 
 ### Requirements
 
@@ -57,8 +61,8 @@ In `components/Header.jsx`:
   - Home (/)
   - Checkout (/checkout)
   - Account (/account)
+- Create a style that applies to the active link so that it is visually different than the others
 - Only show the Account link when logged in
-- Users can bookmark or share a link to a specific view (deep linking)
 
 ---
 
