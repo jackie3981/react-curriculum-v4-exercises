@@ -1,3 +1,10 @@
-export default function StudentWork({ name }) {
-  return <h1>Hello, {name || 'World'} 05!</h1>;
+import SnackManager from './SnackManager';
+
+export default function StudentWork() {
+  return (
+    <div>
+      <h1>Week 5: Converting Uncontrolled Forms to Controlled Components</h1>
+      <SnackManager />
+    </div>
+  );
 }
