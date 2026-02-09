@@ -3,23 +3,21 @@ import {
   RenderCounter,
 } from '../../private/components/renderCounter.jsx';
 import styles from './BookStats.module.css';
+import { useMemo } from 'react';
 
 // Book Statistics Component - Expensive calculations run unnecessarily
 function BookStats({ books }) {
   const { count } = useRenderCounter('BookStats');
 
-  // TODO #4: Optimize these expensive calculations with useMemo
-  // These calculations run every time the component renders,
-  // even when the books array hasn't changed
-  const calculateStats = () => {
-    // eslint-disable-next-line react-hooks/purity
+  // TODO #4 COMPLETADO: Optimized with useMemo
+  // Now calculations only run when the books array changes
+  const stats = useMemo(() => {
     const startTime = performance.now();
 
     // Add some artificial computational load to make timing more visible
     // do not remove!
     let dummy = 0;
     for (let i = 0; i < 10000; i++) {
-      // eslint-disable-next-line react-hooks/purity
       dummy += Math.random();
     }
 
@@ -27,7 +25,6 @@ function BookStats({ books }) {
 
     // Handle empty books array
     if (totalBooks === 0) {
-      // eslint-disable-next-line react-hooks/purity
       const endTime = performance.now();
       const calculationTime = endTime - startTime;
       const microseconds = calculationTime * 1000;
@@ -68,7 +65,6 @@ function BookStats({ books }) {
       dummy += Math.sqrt(i);
     }
 
-    // eslint-disable-next-line react-hooks/purity
     const endTime = performance.now();
     const calculationTime = endTime - startTime;
     const microseconds = calculationTime * 1000;
@@ -87,9 +83,7 @@ function BookStats({ books }) {
       microseconds: microseconds.toFixed(2),
       _dummy: dummy, // Prevent optimization from removing our timing code
     };
-  };
-
-  const stats = calculateStats();
+  }, [books]); // Re-run calculations only when the books array changes
 
   return (
     <div className={styles.statsContainer}>
