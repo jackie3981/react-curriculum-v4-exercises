@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Header({ user }) {
   // Active link styling helper
@@ -13,24 +13,32 @@ export default function Header({ user }) {
   return (
     <header style={{ padding: 12, borderBottom: '1px solid #ddd' }}>
       <h1 style={{ margin: 0 }}>Week 10 Routing Demo</h1>
-
       <nav style={{ display: 'flex', gap: 12, marginTop: 8 }}>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/API/History_API"
+        <NavLink to="/" style={navLinkStyles}>
+          Home
+        </NavLink>
+        <NavLink to="/checkout" style={navLinkStyles}>
+          Checkout
+        </NavLink>
+        {user.isLoggedIn && (
+          <NavLink to="/account" style={navLinkStyles}>
+            Account
+          </NavLink>
+        )}
+        
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API"
           target="_blank"
-          rel="noreferrer"
-        >
+          rel="noreferrer">
           History API (MDN)
         </a>
       </nav>
-
       <div style={{ marginTop: 8 }}>
         {user.isLoggedIn ? (
           <span>
             Logged in as <strong>{user.firstName}</strong>
           </span>
         ) : (
-          <span>Not logged in</span>
+          <span>You are not logged in.</span>
         )}
       </div>
     </header>
