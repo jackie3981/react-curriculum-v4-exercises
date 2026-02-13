@@ -95,15 +95,112 @@ export function surveyReducer(state, action) {
     // ===== STUDENT IMPLEMENTATION TASKS =====
 
     case 'UPDATE_QUESTION_TEXT':
-      // TODO: Implement this action
-      console.log('TODO: Implement UPDATE_QUESTION_TEXT action');
-      return state;
+      return {
+        ...state,
+        questions: state.questions.map((q) =>
+          q.id === action.payload.id
+            ? { ...q, question: action.payload.newText }
+            : q
+        ),
+        survey: {
+          ...state.survey,
+          lastModified: new Date().toISOString().split('T')[0],
+        },
+        ui: {
+          ...state.ui,
+          editingQuestionId: null, // Exit editing mode after saving
+        },
+      };
 
-    case 'DELETE_QUESTION':
-      // TODO: Implement this action
-      console.log('TODO: Implement DELETE_QUESTION action');
-      return state;
+    case 'UPDATE_OPTION_TEXT':
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          if (q.id === action.payload.questionId) {
+            const updatedOptions = [...q.options];
+            updatedOptions[action.payload.optionIndex] = action.payload.newText;
+            return {
+              ...q,
+              options: updatedOptions,
+            };
+          }
+          return q;
+        }),
+        survey: {
+          ...state.survey,
+          lastModified: new Date().toISOString().split('T')[0],
+        },
+      };
 
+    case 'DELETE_QUESTION': {
+      const filteredQuestions = state.questions.filter(
+        (q) => q.id !== action.payload.id
+      );
+
+      return {
+        ...state,
+        questions: filteredQuestions.map((q, index) => ({
+          ...q,
+          order: index, // Recalculate order after deletion
+        })),
+        survey: {
+          ...state.survey,
+          lastModified: new Date().toISOString().split('T')[0],
+        },
+        ui: {
+          ...state.ui,
+          editingQuestionId:
+            state.ui.editingQuestionId === action.payload.id
+              ? null
+              : state.ui.editingQuestionId,
+        },
+      };
+    };
+
+    case 'ADD_OPTION_TO_QUESTION':
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          if (q.id === action.payload.questionId && q.type === QUESTION_TYPES.MULTIPLE_CHOICE) {
+            return {
+              ...q,
+              options: [...q.options, action.payload.optionText],
+            };
+          }
+          return q;
+        }),
+        survey: {
+          ...state.survey,
+          lastModified: new Date().toISOString().split('T')[0],
+        },
+      };
+
+    case 'DELETE_OPTION_FROM_QUESTION':
+      return {
+        ...state,
+        questions: state.questions.map((q) => {
+          if (q.id === action.payload.questionId && q.type === QUESTION_TYPES.MULTIPLE_CHOICE) {
+            // ValidaciÃ³n de mÃ­nimo 2 opciones
+            if (q.options.length <= 2) {
+              console.warn('Cannot delete option: Multiple choice questions must have at least 2 options');
+              return q;
+            }
+
+            const filteredOptions = q.options.filter(
+              (_, index) => index !== action.payload.optionIndex
+            );
+            return {
+              ...q,
+              options: filteredOptions,
+            };
+          }
+          return q;
+        }),
+        survey: {
+          ...state.survey,
+          lastModified: new Date().toISOString().split('T')[0],
+        },
+      };
     default:
       return state;
   }
